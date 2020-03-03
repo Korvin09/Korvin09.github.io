@@ -254,6 +254,7 @@ a {
 }
 
 .works__left .project:first-child .project__text {
+    max-width: 275px;
 }
 
 .about {
