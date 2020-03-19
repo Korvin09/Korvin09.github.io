@@ -220,6 +220,7 @@ span.line-5 {
     position: absolute;
     top: 0;
     left: 0;
+    transition: ease-in 300ms;
 }
 
 .mobile__menu:after {
@@ -232,6 +233,19 @@ span.line-5 {
     position: absolute;
     left: 0;
     bottom: 0;
+    transition: ease-in 300ms;
+}
+
+.mobile__menu.active:before {
+    transform: rotate(-45deg);
+    transition: ease-in 300ms;
+    top: 4px;
+}
+
+.mobile__menu.active:after {
+    transform: rotate(45deg);
+    transition: ease-in 300ms;
+    bottom: 4px;
 }
 
 /*END Mobile menu Style*/
