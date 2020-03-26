@@ -20,9 +20,13 @@
     <header>
         <div class="top__line">
             <div class="top__line_left">
-                <div class="top__line_left-menu">
+                <div class="top__line_left-menu1">
                     <ul>
                         <li><a href="#">Works</a></li>
+                    </ul>
+                </div>
+                <div class="top__line_left-menu2">
+                    <ul>
                         <li><a href="#">About</a></li>
                     </ul>
                 </div>
@@ -33,9 +37,13 @@
                 </div>
             </div>
             <div class="top__line_right">
-                <div class="top__line_right-menu">
+                <div class="top__line_right-menu1">
                     <ul>
                         <li><a href="#">Links</a></li>
+                    </ul>
+                </div>
+                <div class="top__line_right-menu2">
+                    <ul>
                         <li><a href="#">Contacts</a></li>
                     </ul>
                 </div>
@@ -271,11 +279,22 @@
         </div>
     </div>
 </footer>
-<script src="js/main.js"></script>
-<div id="parent_popup">
-    <div id="popup">Этот проект создан в учебных целях, и показывает насколько хорошо был усвоен урок. Всем здоровья и добра!
-        <a class="close"title="Закрыть" onclick="document.getElementById('parent_popup').style.display='none';">X</a>
+<div class="contain-popup">
+    <div class="popup">
+        <div class="popup__close"></div>
+        <div class="popup__head">
+            <h3>
+                Информационное сообщение
+            </h3>
+        </div>
+        <div class="popup__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing.
+        </div>
     </div>
 </div>
+<div class="to__top">
+    <img src="img/top.svg" alt="img">
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>

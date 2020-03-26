@@ -4,6 +4,8 @@ document.getElementById('button_mobile__menu').onclick = function () {
     document.getElementById('block_mobile__menu').classList.toggle('active');
 };
 
+// Плавное появление линий
+
 document.addEventListener("DOMContentLoaded", function line1() {
     setTimeout(() => document.querySelector('.line-1').classList.add('active'), 500);
 });
@@ -24,7 +26,54 @@ document.addEventListener("DOMContentLoaded", function line5() {
     setTimeout(() => document.querySelector('.line-5').classList.add('active'), 1500);
 });
 
-let delay_popup = 60000;setTimeout("document.getElementById('parent_popup').style.display='block'", delay_popup);
+// Информационное окно по таймеру
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => document.querySelector('.contain-popup').style.display = "flex", 60000);
+    setTimeout(() => document.querySelector('.contain-popup').style.display = "none", 180000);
+
+    document.querySelector('.popup__close').onclick = function () {
+         document.querySelector('.contain-popup').style.display = "none";
+     };
+ });
+
+// Появление кнопки наверх при  скроле на 262 пикселя
+
+window.addEventListener('scroll', function () {
+    if (pageYOffset > 262){
+        document.querySelector('.to__top').style.opacity = "1";
+    } else {
+        document.querySelector('.to__top').style.opacity = "";
+    }
+});
+
+document.querySelector(".to__top").addEventListener("click", function () {
+    scrollTo(0,0);
+});
+
+// Отображение в консоли клавиш которые нажал пользователь находясь на сайте
+
+document.addEventListener('keydown', function(event){
+    console.log(event.code);
+});
+
+// Скролл до нужного блока при нажатии ссылки в меню
+
+//document.querySelector(".top__line_left-menu1").addEventListener("click", function () {
+//    window.scrollTo(0,581);
+//});
+
+// Пример работы с меню
+
+ document.querySelector(".top__line_left-menu1").addEventListener("click", function () {
+     document.body.style.background = "red";
+ });
+
+
+ document.querySelector(".top__line_left-menu1").addEventListener("dblclick", function () {
+     document.body.style.background = "";
+ });
+
 
 
 
@@ -209,3 +258,50 @@ let delay_popup = 60000;setTimeout("document.getElementById('parent_popup').styl
 //
 // console.log(registerUser4);
 // console.log(registerUser4.validatePass());
+
+// document.querySelector(".works__left").addEventListener("click", function () {
+//     console.log('1');
+// });
+//
+// document.querySelector(".works__left").addEventListener("dblclick", function () {
+//     console.log('1');
+// });
+//
+// document.querySelector(".works__left").addEventListener("mousemove", function () {
+//     console.log('1');
+// });
+//
+// document.querySelector(".ed-vk").addEventListener("mouseover", function () {
+//     // console.log('1');
+//     document.querySelector(".top__line_center-logo").style.opacity = "0";
+// });
+//
+// document.querySelector(".ed-vk").addEventListener("mouseout", function () {
+//     // console.log('1');
+//     document.querySelector(".top__line_center-logo").style.opacity = "";
+// });
+
+//
+// document.querySelector(".project").addEventListener("mouseover", function () {
+//     // console.log('1');
+//     document.body.style.background = "red";
+// });
+//
+//
+// document.querySelector(".project").addEventListener("mouseout", function () {
+//     // console.log('1');
+//     document.body.style.background = "";
+// });
+
+
+
+// document.querySelector(".top__line_left-menu1").addEventListener("click", function () {
+     // console.log('1');
+//     document.body.style.background = "red";
+// });
+
+
+// document.querySelector(".top__line_left-menu1").addEventListener("dblclick", function () {
+     // console.log('1');
+//     document.body.style.background = "";
+// });
