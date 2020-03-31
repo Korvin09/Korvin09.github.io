@@ -153,6 +153,7 @@ span.line-5.active {
 .top__line {
     width: 100%;
     max-width: 1100px;
+    /*background: red;*/
     margin: 100px auto 0;
 
     display: flex;
@@ -160,28 +161,34 @@ span.line-5.active {
     align-items: center;
 }
 
-.top__line_left-menu1 ul {
-    list-style-type: none;
-    position: absolute;
-    height: 16px;
-    left: -3.68%;
-    right: 90.96%;
-    top: 5px;
+.top__line_left {
+    width: 25%;
 }
 
-.top__line_left-menu2 ul {
-    list-style-type: none;
-    position: absolute;
-    height: 16px;
-    left: 8.32%;
-    right: 79.23%;
-    top: 5px;
+.top__line_center {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.top__line_left-menu1 ul li a,
-.top__line_left-menu2 ul li a,
-.top__line_right-menu1 ul li a,
-.top__line_right-menu2 ul li a{
+.top__line_right {
+    width: 25%;
+}
+
+.top__line_left-menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.top__line_left-menu ul li {
+    margin-right: 70px;
+}
+
+.top__line_left-menu ul li a,
+.top__line_right-menu ul li a {
     font-style: normal;
     font-weight: 800;
     font-size: 12px;
@@ -192,24 +199,16 @@ span.line-5.active {
     text-decoration: none;
 }
 
-.top__line_right-menu1 ul {
+.top__line_right-menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
-    position: absolute;
-    height: 16px;
-    left: 77.5%;
-    right: 10.77%;
-    top: 5px;
- }
-
-.top__line_right-menu2 ul {
-    list-style-type: none;
-    position: absolute;
-    height: 16px;
-    left: 88.5%;
-    right: 0%;
-    top: 5px;
 }
 
+.top__line_right-menu ul li {
+    margin-left: 70px;
+}
 
 /*END Top Line Style*/
 
@@ -514,6 +513,7 @@ footer {
 }
 
 .contact {
+    position: relative;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -580,6 +580,7 @@ footer {
 }
 
 .form-group-line {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -605,6 +606,7 @@ footer {
     border-bottom: 1px solid #CFCFCF;
     padding: 15px 0;
     margin-bottom: 30px;
+    box-shadow: none;
 }
 
 .button-form {
@@ -726,21 +728,61 @@ footer {
 
 /*END PopUP Style*/
 
-.to__top{
+.to__top {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 3;
 }
 
-.to__top{
+.to__top {
     display: block;
     opacity: 0;
-    cursor:pointer;
+    cursor: pointer;
     transition: opacity 300ms;
 }
 
 .to__top img {
     width: 32px;
+    height: auto;
+}
+
+#Works,
+#About,
+#Links,
+#Contacts {
+    position: absolute;
+    left: 0;
+    top: -60px;
+}
+
+.form-error {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    font-size: 12px;
+    color: red;
+}
+
+.form-error.active {
+    display: block;
+}
+
+.success {
+    position: absolute;
+    left: 37%;
+}
+
+.return {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.return img {
+    width: 50px;
     height: auto;
 }

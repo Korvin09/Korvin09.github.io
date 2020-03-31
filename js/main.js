@@ -1,8 +1,10 @@
 // Кнопка мобильного меню сворачивания
+
 document.getElementById('button_mobile__menu').onclick = function () {
     document.getElementById('button_mobile__menu').classList.toggle('active');
     document.getElementById('block_mobile__menu').classList.toggle('active');
 };
+
 
 // Плавное появление линий
 
@@ -26,21 +28,30 @@ document.addEventListener("DOMContentLoaded", function line5() {
     setTimeout(() => document.querySelector('.line-5').classList.add('active'), 1500);
 });
 
+
 // Информационное окно по таймеру
 
 document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => document.querySelector('.contain-popup').style.display = "flex", 60000);
-    setTimeout(() => document.querySelector('.contain-popup').style.display = "none", 180000);
-
     document.querySelector('.popup__close').onclick = function () {
-         document.querySelector('.contain-popup').style.display = "none";
-     };
- });
+        document.querySelector('.contain-popup').style.display = "none";
+    };
+
+    if (localStorage.getItem("popUpVision") !== 'none') {
+        setTimeout(() => document.querySelector('.contain-popup').style.display = "flex", 60000);
+    } else {
+        return false;
+    }
+
+    localStorage.setItem("popUpVision", "none");
+
+    setTimeout(() => document.querySelector('.contain-popup').style.display = "none", 180000);
+});
+
 
 // Появление кнопки наверх при  скроле на 262 пикселя
 
 window.addEventListener('scroll', function () {
-    if (pageYOffset > 262){
+    if (pageYOffset > 262) {
         document.querySelector('.to__top').style.opacity = "1";
     } else {
         document.querySelector('.to__top').style.opacity = "";
@@ -51,28 +62,61 @@ document.querySelector(".to__top").addEventListener("click", function () {
     scrollTo(0,0);
 });
 
+
 // Отображение в консоли клавиш которые нажал пользователь находясь на сайте
 
 document.addEventListener('keydown', function(event){
     console.log(event.code);
 });
 
-// Скролл до нужного блока при нажатии ссылки в меню
 
-//document.querySelector(".top__line_left-menu1").addEventListener("click", function () {
-//    window.scrollTo(0,581);
-//});
+// Нативный Плавный скролл
 
-// Пример работы с меню
+let smoothLinks = document.querySelectorAll('a[href^="#"]');
+for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        let id = smoothLink.getAttribute('href');
 
- document.querySelector(".top__line_left-menu1").addEventListener("click", function () {
-     document.body.style.background = "red";
- });
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+};
 
 
- document.querySelector(".top__line_left-menu1").addEventListener("dblclick", function () {
-     document.body.style.background = "";
- });
+// Функция валидации
+
+function validate() {
+    let userName = document.getElementById("in_name");
+    let userMail = document.getElementById("in_email");
+
+    if (!userName.value) {
+        userName.style.borderBottom = "1px solid red";
+        document.getElementById("in_name_error").style.display = "block";
+        return false;
+    } else {
+        userName.style.borderBottom = "1px solid green";
+        document.getElementById("in_name_error").style.display = "none";
+    }
+
+    if (!userMail.value) {
+        userMail.style.borderBottom = "1px solid red";
+        document.getElementById("in_email_error").style.display = "block";
+        return false;
+    } else {
+        userMail.style.borderBottom = "1px solid green";
+        document.getElementById("in_email_error").style.display = "none";
+        window.location.href = 'success.html';
+    }
+    return false;
+};
+
+
+// Добавление куки с сроком хранения
+
+document.cookie = "name=1; max-age=60; path=/";
 
 
 
@@ -294,14 +338,13 @@ document.addEventListener('keydown', function(event){
 // });
 
 
-
-// document.querySelector(".top__line_left-menu1").addEventListener("click", function () {
-     // console.log('1');
+// document.querySelector(".works__left").addEventListener("mouseenter", function () {
+//     // console.log('1');
 //     document.body.style.background = "red";
 // });
-
-
-// document.querySelector(".top__line_left-menu1").addEventListener("dblclick", function () {
-     // console.log('1');
+//
+//
+// document.querySelector(".works__left").addEventListener("mouseleave", function () {
+//     // console.log('1');
 //     document.body.style.background = "";
 // });
