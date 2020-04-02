@@ -147,7 +147,7 @@ function xmlParser(xml) {
 
 $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:15,
+    margin:10,
     nav:true,
     responsive:{
         0:{
