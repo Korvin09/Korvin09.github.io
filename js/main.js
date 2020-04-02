@@ -119,6 +119,49 @@ function validate() {
 document.cookie = "name=1; max-age=60; path=/";
 
 
+// Парс файла XML
+
+$(document).ready(function () {
+    $.ajax({
+        type: "GET",
+        url: "uploads/works.xml",
+        dataType: "xml",
+        success: xmlParser
+    })
+});
+
+function xmlParser(xml) {
+    $(xml).find("work").each(function () {
+        $(".links").append(
+            '<div class="links__info"><div class="links__info_text">' +
+            '<a href=" ' + $(this).find("link").text() + ' " target="_blank">' + $(this).find("name").text()+ '</a>' +
+            '</div>' +
+            '<div class="links__info_year">'+ $(this).find("date").text() +'</div>' +
+            '</div>'
+        );
+    });
+}
+
+
+// Блок слайдер
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+
 
 
 
