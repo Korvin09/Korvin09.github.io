@@ -786,3 +786,27 @@ footer {
     width: 50px;
     height: auto;
 }
+
+.contain-carousel {
+    margin: 100px 0 50px;
+}
+
+.owl-cat {
+    border: 1px solid blue;
+}
+
+.owl nav {
+    position: relative;
+}
+
+.owl-prev {
+    position: absolute;
+    top: 40%;
+    left: -30px;
+}
+
+.owl-next {
+    position: absolute;
+    top: 40%;
+    right: -30px;
+}
