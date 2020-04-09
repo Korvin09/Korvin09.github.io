@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function line5() {
 });
 
 
-// Информационное окно по таймеру
+/*// Информационное окно по таймеру
 
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.popup__close').onclick = function () {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("popUpVision", "none");
 
     setTimeout(() => document.querySelector('.contain-popup').style.display = "none", 180000);
-});
+});*/
 
 
 // Появление кнопки наверх при  скроле на 262 пикселя
@@ -63,11 +63,11 @@ document.querySelector(".to__top").addEventListener("click", function () {
 });
 
 
-// Отображение в консоли клавиш которые нажал пользователь находясь на сайте
+/*// Отображение в консоли клавиш которые нажал пользователь находясь на сайте
 
 document.addEventListener('keydown', function(event){
     console.log(event.code);
-});
+});*/
 
 
 // Нативный Плавный скролл
@@ -142,6 +142,30 @@ function xmlParser(xml) {
     });
 }
 
+
+// Ajax запрос на подгрузку внешнего ресурса
+
+$(".project__links1").click(function(){
+    $.ajax({
+        url: "work1.html",
+        cache: true,
+        success: function (result) {
+            $(".line").html(result);
+            scrollTo(0,0);
+        },
+    });
+});
+
+$(".project__links2").click(function(){
+    $.ajax({
+        url: "work2.html",
+        cache: true,
+        success: function (result) {
+            $(".line").html(result);
+            scrollTo(0,0);
+        },
+    });
+});
 
 
 
